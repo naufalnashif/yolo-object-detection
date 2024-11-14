@@ -1,0 +1,11 @@
+python draw_zones.py --source_path draw-polygon.jpg --zone_configuration_path outputs/polygons.json
+python draw_zones.py --source_path draw-polygon.png --zone_configuration_path outputs/polygons.json
+python minimarket-time-analysis.py --zone_configuration_path "outputs/polygons.json" --source_video_path "minimarket.mp4" --model_path "yolov8n.pt" --confidence_threshold 0.3 --iou_threshold 0.7 --classes 0
+
+python minimarket-time-analysis-2.py --zone_configuration_path "outputs/polygons.json" --source_video_path "minimarket.mp4" --weights "yolov8n.pt" --device "cpu" --confidence_threshold 0.25 --iou_threshold 0.7
+python minimarket-time-analysis-2.py --zone_configuration_path "outputs/polygons.json" --source_video_path "video-inputs/people-walking.mp4" --weights "yolov8n.pt" --device "cpu" --confidence_threshold 0.25 --iou_threshold 0.7
+
+python minimarket-time-analysis-3.py --zone_configuration_path "outputs/polygons.json" --source_video_path "minimarket.mp4" --weights "yolov8n.pt" --device "cpu" --confidence_threshold 0.3 --iou_threshold 0.7 --classes 0
+
+
+https://webcams.nyctmc.org/api/cameras/053e8995-f8cb-4d02-a659-70ac7c7da5db/image
